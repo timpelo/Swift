@@ -35,14 +35,15 @@ class MeetingCostModel {
     // returns the current cost of meeting using startMeetingDate, averageHourSalary
     // and numberOfParticipants
     var getCurrentCostOfMeeting : Double? {
-        
-        if(isMeetingOn) {
-            let checkpoint = NSDate()
-            let averageSecondSalary = averageHourSalary / 60 / 60
-            let difference = checkpoint.timeIntervalSinceDate(startMeetingDate!)
-            return (difference * averageSecondSalary) * Double(numberOfParticipants)
+        get {
+            if(isMeetingOn) {
+                let checkpoint = NSDate()
+                let averageSecondSalary = averageHourSalary / 60 / 60
+                let difference = checkpoint.timeIntervalSinceDate(startMeetingDate!)
+                return (difference * averageSecondSalary) * Double(numberOfParticipants)
+            }
+            return nil
         }
-        return nil
     }
     
     // sets isMeetingOn to false

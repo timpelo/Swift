@@ -15,6 +15,7 @@
 		8B4E5A2C1D8015A400A52474 /* MeetingCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E5A2B1D8015A400A52474 /* MeetingCalculatorTests.swift */; };
 		8B4E5A371D8015A400A52474 /* MeetingCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E5A361D8015A400A52474 /* MeetingCalculatorUITests.swift */; };
 		8B4E5A451D80161E00A52474 /* MeetingCostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E5A441D80161E00A52474 /* MeetingCostModel.swift */; };
+		8B4E5A481D802DED00A52474 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4E5A471D802DED00A52474 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8B4E5A361D8015A400A52474 /* MeetingCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingCalculatorUITests.swift; sourceTree = "<group>"; };
 		8B4E5A381D8015A400A52474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B4E5A441D80161E00A52474 /* MeetingCostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingCostModel.swift; sourceTree = "<group>"; };
+		8B4E5A471D802DED00A52474 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4E5A481D802DED00A52474 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		8B4E5A0A1D8015A400A52474 = {
 			isa = PBXGroup;
 			children = (
+				8B4E5A471D802DED00A52474 /* CoreLocation.framework */,
 				8B4E5A151D8015A400A52474 /* MeetingCalculator */,
 				8B4E5A2A1D8015A400A52474 /* MeetingCalculatorTests */,
 				8B4E5A351D8015A400A52474 /* MeetingCalculatorUITests */,

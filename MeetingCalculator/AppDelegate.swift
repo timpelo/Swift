@@ -7,34 +7,38 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
     var meeting : MeetingCostModel?
     var updateTimer : NSTimer?
+    var locationManager : CLLocationManager?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Creates and starts meeting.
         meeting = MeetingCostModel(numberOfParticipants: 10, averageHourSalary: 35.0, currency: "Euro")
         meeting!.startMeeting()
         
-        
+        // Creates location manager, request permission and starts updating location.
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
+        locationManager?.startUpdatingLocation()
+
         return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-
-        // Invalidates the timer.
+        // Invalidates timer.
         updateTimer?.invalidate()
-        
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -42,22 +46,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        
-        // Creates the timer.
+        // Creates new timer to track meeting.
         NSLog("Registered timer")
         updateTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateMeetingCost), userInfo: nil, repeats: true)
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
     }
     
+    // MARK: My methods
     func updateMeetingCost() {
-        NSLog("Updating...")
         if let meetingTmp : MeetingCostModel? = meeting {
             let cost = meetingTmp!.getCurrentCostOfMeeting
             NSLog("Cost is " + String(cost!))
         }
+    }
+    
+    // MARK: CLLocationManagerDelegate delegate methods
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        // Stop updating location.
+        locationManager?.stopUpdatingLocation()
+        
+        // Set coordinates for meeting.
+        let location = locations[0].coordinate
+        meeting?.latitude = location.latitude
+        meeting?.longitude = location.longitude
+        
+        NSLog("Got location at " + String(location.latitude) + ", " + String(location.longitude))
     }
 
 
