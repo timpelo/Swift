@@ -9,18 +9,18 @@
 import Foundation
 
 class MeetingCostModel {
-    var averageHourSalary : Double?
+    var averageHourSalary : Double
     var isMeetingOn : Bool = false
-    var numberOfParticipants : Int?
+    var numberOfParticipants : Int
     var latitude : Double?
     var longitude : Double?
     var startMeetingDate : NSDate?
-    var currentcy : String?
+    var currency : String?
     
     init(numberOfParticipants : Int, averageHourSalary : Double, currency : String) {
         self.numberOfParticipants = numberOfParticipants;
         self.averageHourSalary = averageHourSalary
-        self.currentcy = currency
+        self.currency = currency
     }
     
     // initializes startMeetingDate if meeting was off
@@ -38,8 +38,9 @@ class MeetingCostModel {
         
         if(isMeetingOn) {
             let checkpoint = NSDate()
+            let averageSecondSalary = averageHourSalary / 60 / 60
             let difference = checkpoint.timeIntervalSinceDate(startMeetingDate!)
-            return Double(difference) * averageHourSalary!
+            return (difference * averageSecondSalary) * Double(numberOfParticipants)
         }
         return nil
     }
