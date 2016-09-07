@@ -14,6 +14,7 @@
 		8B4E5A211D8015A400A52474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4E5A1F1D8015A400A52474 /* LaunchScreen.storyboard */; };
 		8B4E5A2C1D8015A400A52474 /* MeetingCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E5A2B1D8015A400A52474 /* MeetingCalculatorTests.swift */; };
 		8B4E5A371D8015A400A52474 /* MeetingCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E5A361D8015A400A52474 /* MeetingCalculatorUITests.swift */; };
+		8B4E5A451D80161E00A52474 /* MeetingCostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4E5A441D80161E00A52474 /* MeetingCostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8B4E5A321D8015A400A52474 /* MeetingCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeetingCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4E5A361D8015A400A52474 /* MeetingCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingCalculatorUITests.swift; sourceTree = "<group>"; };
 		8B4E5A381D8015A400A52474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B4E5A441D80161E00A52474 /* MeetingCostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingCostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				8B4E5A1D1D8015A400A52474 /* Assets.xcassets */,
 				8B4E5A1F1D8015A400A52474 /* LaunchScreen.storyboard */,
 				8B4E5A221D8015A400A52474 /* Info.plist */,
+				8B4E5A461D80196600A52474 /* model */,
 			);
 			path = MeetingCalculator;
 			sourceTree = "<group>";
@@ -123,6 +126,14 @@
 				8B4E5A381D8015A400A52474 /* Info.plist */,
 			);
 			path = MeetingCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		8B4E5A461D80196600A52474 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8B4E5A441D80161E00A52474 /* MeetingCostModel.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4E5A191D8015A400A52474 /* ViewController.swift in Sources */,
+				8B4E5A451D80161E00A52474 /* MeetingCostModel.swift in Sources */,
 				8B4E5A171D8015A400A52474 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
