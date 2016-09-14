@@ -21,10 +21,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var meeting : MeetingCostModel?
     var timer : NSTimer?
     var locationManager : CLLocationManager?
+    var geoCoder : CLGeocoder?
+    var locationIndicator : UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Sets location manager.
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
+        locationManager?.startUpdatingLocation()
+        locationIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        NSLayoutConstraint(item: locationIndicator!, attribute: .Leading, relatedBy: .Equal, toItem: meetingNameField, attribute: .LeadingMargin, multiplier: 1.0, constant: 0.0).active = true
+        meetingNameField.addSubview(locationIndicator!)
+        locationIndicator?.startAnimating()
+        locationIndicator?.hidesWhenStopped = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,14 +67,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 meetingSuccess.averageHourSalary = averageSalary!
                 meetingSuccess.numberOfParticipants = participantNumber!
                 meetingSuccess.startMeeting()
+                timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateMeetingCost), userInfo: nil, repeats: true)
             }
-            
-            // Sets location manager.
-            locationManager = CLLocationManager()
-            locationManager?.requestWhenInUseAuthorization()
-            locationManager?.delegate = self
-            locationManager?.startUpdatingLocation()
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateMeetingCost), userInfo: nil, repeats: true)
             
             // Changes button text to stop.
             startStopButton.setTitle("Stop meeting", forState: UIControlState.Normal)
@@ -93,6 +99,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let location = locations[0].coordinate
         meeting?.latitude = location.latitude
         meeting?.longitude = location.longitude
+        
+        geoCoder = CLGeocoder()
+        geoCoder?.reverseGeocodeLocation(locations[0], completionHandler: {
+            (placemarks, error) in
+            let pm = placemarks as? [CLPlacemark]!
+            if (pm != nil && pm!.count > 0){
+                let location = placemarks![0] as? CLPlacemark
+                
+                let meetingCity : String? = location?.locality
+                let meetingCountry : String? = location?.country
+                let meetingName : String? = "Meeting in " + meetingCity! + ", " + meetingCountry!
+                self.meetingNameField.text = meetingName!
+                //self.locationIndicator!.stopAnimating()
+            }
+        })
         
         NSLog("Meeting set to " + String(meeting?.latitude) + ", " + String(meeting?.longitude))
     }
