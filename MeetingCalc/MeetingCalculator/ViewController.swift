@@ -31,18 +31,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func startMeeting(sender: AnyObject) {
+    
+    func updateMeetingCost() {
+        var cost : Double = (meeting?.getCurrentCostOfMeeting)!
+        cost = (round(cost*100))/100
+        costLabel.text = String(cost) + (meeting?.currency)!
+    }
+    
+    func stopMeeting() {
+        // Invalidates timer and updates button text.
+        timer?.invalidate()
+        meeting?.isMeetingOn = false;
+        startStopButton.setTitle("Start meeting", forState: UIControlState.Normal)
+    }
+    
+    func startMeeting() {
         let participantNumber : Int? = Int(meetingMembersField.text!)
         let averageSalary : Double? = Double(averageSalaryField.text!)
         
-        if((meeting?.isMeetingOn)!){
-            // Invalidates timer and updates button text.
-            timer?.invalidate()
-            meeting?.isMeetingOn = false;
-            startStopButton.setTitle("Start meeting", forState: UIControlState.Normal)
-            
-        } else if(participantNumber != nil && averageSalary != nil) {
+        if(participantNumber != nil && averageSalary != nil) {
             // If meeting wasn't on, update details.
             if let meetingSuccess : MeetingCostModel = meeting {
                 meetingSuccess.averageHourSalary = averageSalary!
@@ -65,12 +72,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             NSLog("Salary: " + averageSalaryField.text!)
             
         }
+        
     }
-    
-    func updateMeetingCost() {
-        var cost : Double = (meeting?.getCurrentCostOfMeeting)!
-        cost = (round(cost*100))/100
-        costLabel.text = String(cost) + (meeting?.currency)!
+
+    @IBAction func meetingButtonPressed(sender: AnyObject) {
+        if((meeting?.isMeetingOn)!){
+            stopMeeting()
+        } else {
+            startMeeting()
+        }
     }
     
     // MARK: CLLocationManagerDelegate delegate methods
@@ -84,7 +94,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         meeting?.latitude = location.latitude
         meeting?.longitude = location.longitude
         
-        NSLog("Meeting set to " + String(meeting?.latitude!) + ", " + String(meeting?.longitude!))
+        NSLog("Meeting set to " + String(meeting?.latitude) + ", " + String(meeting?.longitude))
     }
 }
 

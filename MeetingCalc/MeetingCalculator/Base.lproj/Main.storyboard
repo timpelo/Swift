@@ -42,7 +42,7 @@
                                 <rect key="frame" x="20" y="171" width="560" height="30"/>
                                 <state key="normal" title="Start meeting"/>
                                 <connections>
-                                    <action selector="startMeeting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NX7-2y-2az"/>
+                                    <action selector="meetingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oc4-Ro-mJy"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="euZ-TA-4I5">
