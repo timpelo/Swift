@@ -27,14 +27,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Sets location manager.
+        // Create locationmanager.
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
         locationManager?.delegate = self
         locationManager?.startUpdatingLocation()
+        
+        // Create location indicator and set constraints
         locationIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-        NSLayoutConstraint(item: locationIndicator!, attribute: .Leading, relatedBy: .Equal, toItem: meetingNameField, attribute: .LeadingMargin, multiplier: 1.0, constant: 0.0).active = true
-        meetingNameField.addSubview(locationIndicator!)
+        let topOffset : CGFloat = 5.0
+        let endOffset : CGFloat = -20.0
+        self.view.addSubview(locationIndicator!)
+        let constraitTrail = NSLayoutConstraint(item: locationIndicator!, attribute: .TrailingMargin, relatedBy: .Equal, toItem: startStopButton, attribute: .TrailingMargin, multiplier: 1.0, constant: endOffset)
+        let constraitTop = NSLayoutConstraint(item: locationIndicator!, attribute: .TopMargin, relatedBy: .Equal, toItem: meetingNameField, attribute: .TopMargin, multiplier: 1.0, constant: topOffset)
+        locationIndicator?.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activateConstraints([constraitTrail, constraitTop])
         locationIndicator?.startAnimating()
         locationIndicator?.hidesWhenStopped = true
     }
@@ -58,11 +65,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func startMeeting() {
+        // Convert text field values to numbers.
         let participantNumber : Int? = Int(meetingMembersField.text!)
         let averageSalary : Double? = Double(averageSalaryField.text!)
         
+        // Start meeting if values are valid.
         if(participantNumber != nil && averageSalary != nil) {
-            // If meeting wasn't on, update details.
             if let meetingSuccess : MeetingCostModel = meeting {
                 meetingSuccess.averageHourSalary = averageSalary!
                 meetingSuccess.numberOfParticipants = participantNumber!
@@ -72,16 +80,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             // Changes button text to stop.
             startStopButton.setTitle("Stop meeting", forState: UIControlState.Normal)
-            NSLog("Meeting starts")
             NSLog("Name: " + meetingNameField.text!)
             NSLog("Members: " + meetingMembersField.text!)
             NSLog("Salary: " + averageSalaryField.text!)
-            
         }
         
     }
 
     @IBAction func meetingButtonPressed(sender: AnyObject) {
+        // Do action according if meeting is currently running.
         if((meeting?.isMeetingOn)!){
             stopMeeting()
         } else {
@@ -100,18 +107,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         meeting?.latitude = location.latitude
         meeting?.longitude = location.longitude
         
+        // Create CLGeocoder
         geoCoder = CLGeocoder()
         geoCoder?.reverseGeocodeLocation(locations[0], completionHandler: {
             (placemarks, error) in
             let pm = placemarks as? [CLPlacemark]!
             if (pm != nil && pm!.count > 0){
-                let location = placemarks![0] as? CLPlacemark
                 
+                // Get city and country from geocoder and set it as value to meeting name field.
+                let location = placemarks![0] as? CLPlacemark
                 let meetingCity : String? = location?.locality
                 let meetingCountry : String? = location?.country
                 let meetingName : String? = "Meeting in " + meetingCity! + ", " + meetingCountry!
                 self.meetingNameField.text = meetingName!
-                //self.locationIndicator!.stopAnimating()
+                self.locationIndicator!.stopAnimating()
             }
         })
         
