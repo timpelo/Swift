@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        
+        NSLog("Disappear")
         if let xFloat : Float = NSNumberFormatter().numberFromString(xField.text!)!.floatValue {
             jobsLocation!.x = CGFloat(xFloat)
         }

@@ -19,13 +19,16 @@ class JobsViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Steve Jobs"
         self.edgesForExtendedLayout = UIRectEdge.None
-        
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
+    override func viewDidLayoutSubviews() {
+        NSLog("Appeared")
         if let location : PointModel = jobsLocation {
-          jobsView.frame.origin = location.location
+            jobsView.frame.origin = location.location
+            NSLog("location " + String(jobsView.center))
+        } else {
+            jobsView.frame.origin.x = UIScreen.mainScreen().bounds.width/2
+            jobsView.frame.origin.y = UIScreen.mainScreen().bounds.height/2
         }
     }
     
@@ -40,7 +43,7 @@ class JobsViewController: UIViewController {
         let jobsFrame = jobsView.frame
         jobsLocation = PointModel(x: jobsFrame.origin.x, y: jobsFrame.origin.y)
         settingsView = SettingsViewController(nibName: "SettingsView", bundle: nil)
-        settingsView?.jobsLocation = jobsLocation
+        settingsView?.jobsLocation = self.jobsLocation
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.navigation?.pushViewController(settingsView!, animated: true)
