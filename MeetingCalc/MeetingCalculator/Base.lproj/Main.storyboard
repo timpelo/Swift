@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sRU-f3-gW1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start New Meeting-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MeetingCalculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start new meeting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi5-Yz-CoW">
-                                <rect key="frame" x="20" y="28" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of meeting" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cYY-kc-Aim">
                                 <rect key="frame" x="20" y="57" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -42,25 +37,12 @@
                                 <rect key="frame" x="20" y="171" width="560" height="30"/>
                                 <state key="normal" title="Start meeting"/>
                                 <connections>
-                                    <action selector="meetingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oc4-Ro-mJy"/>
+                                    <segue destination="ydA-Hs-YVG" kind="show" id="72k-Ro-fO7"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="euZ-TA-4I5">
                                 <rect key="frame" x="20" y="209" width="560" height="354"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqU-iI-8D9">
-                                        <rect key="frame" x="0.0" y="117" width="560" height="120"/>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="40"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="HqU-iI-8D9" firstAttribute="centerY" secondItem="euZ-TA-4I5" secondAttribute="centerY" id="3Pp-Lc-dmC"/>
-                                    <constraint firstItem="HqU-iI-8D9" firstAttribute="width" secondItem="euZ-TA-4I5" secondAttribute="width" id="Lz8-A6-2PH"/>
-                                    <constraint firstItem="HqU-iI-8D9" firstAttribute="centerX" secondItem="euZ-TA-4I5" secondAttribute="centerX" id="v2l-xM-le5"/>
-                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it worth it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPb-La-0Xi">
                                 <rect key="frame" x="20" y="571" width="560" height="21"/>
@@ -77,10 +59,10 @@
                             <constraint firstItem="aZ1-K5-Z3P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="I42-CB-95q"/>
                             <constraint firstItem="kPb-La-0Xi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="Iwa-KK-ZZ9"/>
                             <constraint firstItem="euZ-TA-4I5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="JoG-SQ-oz3"/>
-                            <constraint firstItem="Pi5-Yz-CoW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="M8j-rx-suG"/>
                             <constraint firstAttribute="trailing" secondItem="AKS-Mz-VGC" secondAttribute="trailing" constant="20" symbolic="YES" id="PzQ-9c-Gp3"/>
                             <constraint firstItem="cYY-kc-Aim" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="TWc-YU-FIt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kPb-La-0Xi" secondAttribute="bottom" constant="8" symbolic="YES" id="arW-Hu-9A7"/>
+                            <constraint firstItem="cYY-kc-Aim" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="57" id="cqD-AP-BYx"/>
                             <constraint firstItem="AKS-Mz-VGC" firstAttribute="top" secondItem="cYY-kc-Aim" secondAttribute="bottom" constant="8" symbolic="YES" id="cr8-d3-JPG"/>
                             <constraint firstItem="euZ-TA-4I5" firstAttribute="top" secondItem="J3x-np-lFX" secondAttribute="bottom" constant="8" symbolic="YES" id="eBO-dg-ZRr"/>
                             <constraint firstItem="J3x-np-lFX" firstAttribute="top" secondItem="aZ1-K5-Z3P" secondAttribute="bottom" constant="8" symbolic="YES" id="eeL-VT-41m"/>
@@ -88,28 +70,107 @@
                             <constraint firstItem="euZ-TA-4I5" firstAttribute="top" secondItem="J3x-np-lFX" secondAttribute="bottom" constant="8" symbolic="YES" id="fPy-GL-UmV"/>
                             <constraint firstAttribute="trailing" secondItem="euZ-TA-4I5" secondAttribute="trailing" constant="20" symbolic="YES" id="fne-LN-39P"/>
                             <constraint firstItem="aZ1-K5-Z3P" firstAttribute="top" secondItem="AKS-Mz-VGC" secondAttribute="bottom" constant="8" symbolic="YES" id="km2-sr-XKb"/>
-                            <constraint firstItem="cYY-kc-Aim" firstAttribute="top" secondItem="Pi5-Yz-CoW" secondAttribute="bottom" constant="8" symbolic="YES" id="m5S-N9-O72"/>
                             <constraint firstItem="euZ-TA-4I5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="mAB-Lq-uJY"/>
                             <constraint firstAttribute="trailing" secondItem="kPb-La-0Xi" secondAttribute="trailing" constant="20" symbolic="YES" id="mBr-wi-wh7"/>
                             <constraint firstItem="euZ-TA-4I5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="mJu-7x-eAa"/>
                             <constraint firstAttribute="trailing" secondItem="aZ1-K5-Z3P" secondAttribute="trailing" constant="20" symbolic="YES" id="oLe-Pf-tkJ"/>
                             <constraint firstItem="J3x-np-lFX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="r09-iX-rxj"/>
                             <constraint firstAttribute="trailing" secondItem="J3x-np-lFX" secondAttribute="trailing" constant="20" symbolic="YES" id="tw8-Oc-grI"/>
-                            <constraint firstAttribute="trailing" secondItem="Pi5-Yz-CoW" secondAttribute="trailing" constant="20" symbolic="YES" id="v1F-c8-eF8"/>
-                            <constraint firstItem="Pi5-Yz-CoW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="xP4-Hi-OOM"/>
                             <constraint firstAttribute="trailing" secondItem="cYY-kc-Aim" secondAttribute="trailing" constant="20" symbolic="YES" id="xYL-6M-SpW"/>
                             <constraint firstItem="euZ-TA-4I5" firstAttribute="top" secondItem="J3x-np-lFX" secondAttribute="bottom" constant="8" symbolic="YES" id="zO1-YD-vb5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Start New Meeting" id="Xev-cz-64S"/>
                     <connections>
                         <outlet property="averageSalaryField" destination="aZ1-K5-Z3P" id="HY4-eV-gQb"/>
-                        <outlet property="costLabel" destination="HqU-iI-8D9" id="E06-Z7-hKB"/>
                         <outlet property="meetingMembersField" destination="AKS-Mz-VGC" id="dj8-RT-NRY"/>
                         <outlet property="meetingNameField" destination="cYY-kc-Aim" id="AaD-RG-1SO"/>
                         <outlet property="startStopButton" destination="J3x-np-lFX" id="FMl-23-Izd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1208" y="307"/>
+        </scene>
+        <!--Meeting Cost View Controller-->
+        <scene sceneID="Atg-bH-gsk">
+            <objects>
+                <viewController id="ydA-Hs-YVG" customClass="MeetingCostViewController" customModule="MeetingCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S62-jQ-uwm"/>
+                        <viewControllerLayoutGuide type="bottom" id="qGo-ww-GdX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ba3-nw-e6T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dx-Ku-Vaq">
+                                <rect key="frame" x="20" y="72" width="560" height="30"/>
+                                <state key="normal" title="Stop meeting"/>
+                                <connections>
+                                    <action selector="showNavBar:" destination="ydA-Hs-YVG" eventType="touchUpInside" id="d7K-ko-TBD"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5E-aR-9Mp">
+                                <rect key="frame" x="20" y="110" width="560" height="453"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTV-mm-h95">
+                                        <rect key="frame" x="254" y="200" width="53" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="45"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="dTV-mm-h95" firstAttribute="centerY" secondItem="U5E-aR-9Mp" secondAttribute="centerY" id="wQg-eF-iVt"/>
+                                    <constraint firstItem="dTV-mm-h95" firstAttribute="centerX" secondItem="U5E-aR-9Mp" secondAttribute="centerX" id="zfb-xT-pMd"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it worth it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSN-Kh-5cB">
+                                <rect key="frame" x="20" y="571" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6Dx-Ku-Vaq" secondAttribute="trailing" constant="20" symbolic="YES" id="0FZ-H4-cm4"/>
+                            <constraint firstItem="U5E-aR-9Mp" firstAttribute="top" secondItem="6Dx-Ku-Vaq" secondAttribute="bottom" constant="8" symbolic="YES" id="2Mu-PU-LSX"/>
+                            <constraint firstAttribute="trailing" secondItem="U5E-aR-9Mp" secondAttribute="trailing" constant="20" symbolic="YES" id="Eiq-3a-cX3"/>
+                            <constraint firstItem="U5E-aR-9Mp" firstAttribute="leading" secondItem="Ba3-nw-e6T" secondAttribute="leading" constant="20" symbolic="YES" id="HoW-Em-7dv"/>
+                            <constraint firstItem="6Dx-Ku-Vaq" firstAttribute="top" secondItem="S62-jQ-uwm" secondAttribute="bottom" constant="8" symbolic="YES" id="S9A-oy-Kra"/>
+                            <constraint firstItem="cSN-Kh-5cB" firstAttribute="top" secondItem="U5E-aR-9Mp" secondAttribute="bottom" constant="8" symbolic="YES" id="Xm4-60-KGp"/>
+                            <constraint firstItem="qGo-ww-GdX" firstAttribute="top" secondItem="cSN-Kh-5cB" secondAttribute="bottom" constant="8" symbolic="YES" id="lON-9F-EdG"/>
+                            <constraint firstItem="6Dx-Ku-Vaq" firstAttribute="leading" secondItem="Ba3-nw-e6T" secondAttribute="leading" constant="20" symbolic="YES" id="ucJ-Hz-Dqq"/>
+                            <constraint firstItem="cSN-Kh-5cB" firstAttribute="leading" secondItem="Ba3-nw-e6T" secondAttribute="leading" constant="20" symbolic="YES" id="xVi-vz-OZb"/>
+                            <constraint firstAttribute="trailing" secondItem="cSN-Kh-5cB" secondAttribute="trailing" constant="20" symbolic="YES" id="yEY-0I-wKd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="costLabel" destination="dTV-mm-h95" id="SVf-DU-ZpP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l42-4g-f1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2100" y="307"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x8g-SB-S1h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sRU-f3-gW1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8t2-cx-f3e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="obJ-bA-VMP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rDR-Ri-78M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="396" y="307"/>
         </scene>

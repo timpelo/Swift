@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate {
 
 
     @IBOutlet weak var meetingNameField: UITextField!
@@ -26,6 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = UIRectEdge.Left
         
         // Create locationmanager.
         locationManager = CLLocationManager()
@@ -35,13 +36,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // Create location indicator and set constraints
         locationIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-        let topOffset : CGFloat = 5.0
-        let endOffset : CGFloat = -20.0
-        self.view.addSubview(locationIndicator!)
-        let constraitTrail = NSLayoutConstraint(item: locationIndicator!, attribute: .TrailingMargin, relatedBy: .Equal, toItem: startStopButton, attribute: .TrailingMargin, multiplier: 1.0, constant: endOffset)
-        let constraitTop = NSLayoutConstraint(item: locationIndicator!, attribute: .TopMargin, relatedBy: .Equal, toItem: meetingNameField, attribute: .TopMargin, multiplier: 1.0, constant: topOffset)
-        locationIndicator?.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activateConstraints([constraitTrail, constraitTop])
+        meetingNameField.rightView = locationIndicator
         locationIndicator?.startAnimating()
         locationIndicator?.hidesWhenStopped = true
     }
@@ -51,18 +46,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func updateMeetingCost() {
-        var cost : Double = (meeting?.getCurrentCostOfMeeting)!
-        cost = (round(cost*100))/100
-        costLabel.text = String(cost) + (meeting?.currency)!
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destination = segue.destinationViewController as! MeetingCostViewController
+        destination.meeting = self.meeting
+        destination.timer = self.timer
     }
     
-    func stopMeeting() {
-        // Invalidates timer and updates button text.
-        timer?.invalidate()
-        meeting?.isMeetingOn = false;
-        startStopButton.setTitle("Start meeting", forState: UIControlState.Normal)
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        let members : Int? = Int(meetingMembersField.text!)
+        let salary : Double? = Double(averageSalaryField.text!)
+        
+        if(members != nil && salary != nil) {
+            NSLog("Starting meeting")
+            startMeeting()
+            return true
+        } else {
+            UIAlertView(title: "Error", message: "Invalid values in members or average salary", delegate: self, cancelButtonTitle: "Ok").show()
+            return false
+        }
     }
+    
+    //func stopMeeting() {
+        // Invalidates timer and updates button text.
+      //  timer?.invalidate()
+      //  meeting?.isMeetingOn = false;
+   // }
     
     func startMeeting() {
         // Convert text field values to numbers.
@@ -75,25 +83,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 meetingSuccess.averageHourSalary = averageSalary!
                 meetingSuccess.numberOfParticipants = participantNumber!
                 meetingSuccess.startMeeting()
-                timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateMeetingCost), userInfo: nil, repeats: true)
             }
             
-            // Changes button text to stop.
-            startStopButton.setTitle("Stop meeting", forState: UIControlState.Normal)
             NSLog("Name: " + meetingNameField.text!)
             NSLog("Members: " + meetingMembersField.text!)
             NSLog("Salary: " + averageSalaryField.text!)
         }
         
-    }
-
-    @IBAction func meetingButtonPressed(sender: AnyObject) {
-        // Do action according if meeting is currently running.
-        if((meeting?.isMeetingOn)!){
-            stopMeeting()
-        } else {
-            startMeeting()
-        }
     }
     
     // MARK: CLLocationManagerDelegate delegate methods

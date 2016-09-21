@@ -20,11 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // Creates empty meeting and sets it to view controller
         meeting = MeetingCostModel(numberOfParticipants: 0, averageHourSalary: 0, currency: "€")
-        let viewController : ViewController? = window?.rootViewController as? ViewController
         
-        if let viewControllerSuccess : ViewController = viewController! {
-            viewControllerSuccess.meeting = meeting;
-        }
+        // Let's fetch the UINavigationController
+        let naviViewController = window?.rootViewController as! UINavigationController
+        
+        // It may have several viewControllers, let's take the first and cast it to ViewController
+        let firstViewController  = naviViewController.viewControllers[0] as! ViewController
+        
+        // Let's add the meeting model
+        firstViewController.meeting = self.meeting
 
         return true
     }
