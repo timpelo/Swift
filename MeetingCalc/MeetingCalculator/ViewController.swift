@@ -15,7 +15,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIAlertViewDe
     @IBOutlet weak var meetingNameField: UITextField!
     @IBOutlet weak var meetingMembersField: UITextField!
     @IBOutlet weak var averageSalaryField: UITextField!
-    @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var startStopButton: UIButton!
     
     var meeting : MeetingCostModel?
@@ -57,7 +56,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIAlertViewDe
         let salary : Double? = Double(averageSalaryField.text!)
         
         if(members != nil && salary != nil) {
-            NSLog("Starting meeting")
             startMeeting()
             return true
         } else {
@@ -66,11 +64,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIAlertViewDe
         }
     }
     
-    //func stopMeeting() {
-        // Invalidates timer and updates button text.
-      //  timer?.invalidate()
-      //  meeting?.isMeetingOn = false;
-   // }
+    override func encodeRestorableStateWithCoder(coder: NSCoder) {
+        coder.encodeObject(self.meetingNameField.text, forKey:"meetingField")
+        coder.encodeObject(self.meetingMembersField.text, forKey:"memberField")
+        coder.encodeObject(self.averageSalaryField.text, forKey:"salaryField")
+        super.encodeRestorableStateWithCoder(coder)
+    }
+    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+        let nameText = coder.decodeObjectForKey("meetingField") as? String
+        let memberText = coder.decodeObjectForKey("memberField") as? String
+        let salaryText = coder.decodeObjectForKey("salaryField") as? String
+        
+        if(nameText != nil) {
+            self.meetingNameField.text = nameText
+        }
+        
+        if(memberText != nil) {
+            self.meetingMembersField.text = memberText
+        }
+        
+        if(salaryText != nil) {
+            self.averageSalaryField.text = salaryText
+        }
+        super.decodeRestorableStateWithCoder(coder);
+    }
     
     func startMeeting() {
         // Convert text field values to numbers.

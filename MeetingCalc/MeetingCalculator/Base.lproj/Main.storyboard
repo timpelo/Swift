@@ -9,7 +9,7 @@
         <!--Start New Meeting-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MeetingCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="startMeetingView" id="BYZ-38-t0r" customClass="ViewController" customModule="MeetingCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -95,7 +95,7 @@
         <!--Meeting Cost View Controller-->
         <scene sceneID="Atg-bH-gsk">
             <objects>
-                <viewController id="ydA-Hs-YVG" customClass="MeetingCostViewController" customModule="MeetingCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="meetingCostView" id="ydA-Hs-YVG" customClass="MeetingCostViewController" customModule="MeetingCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S62-jQ-uwm"/>
                         <viewControllerLayoutGuide type="bottom" id="qGo-ww-GdX"/>
@@ -159,7 +159,7 @@
         <!--Navigation Controller-->
         <scene sceneID="x8g-SB-S1h">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sRU-f3-gW1" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="navigationView" automaticallyAdjustsScrollViewInsets="NO" id="sRU-f3-gW1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8t2-cx-f3e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

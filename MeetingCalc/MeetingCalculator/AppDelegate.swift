@@ -32,6 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         return true
     }
+    
+    func application(application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
+        NSLog("shouldRestoreApplicationState")
+        return true
+    }
+    
+    func application(application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
+        NSLog("shouldSaveApplicationState")
+        return true
+    }
+
 
     func applicationWillResignActive(application: UIApplication) {
 
@@ -47,10 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        let meetingPrefs : MeetingCostModel? = AppDelegate.restoreDataModel()
-        if(meetingPrefs != nil) {
-            self.meeting = meetingPrefs
-        }
         
     }
 

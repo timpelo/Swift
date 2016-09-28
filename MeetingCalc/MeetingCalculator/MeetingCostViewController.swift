@@ -17,18 +17,48 @@ class MeetingCostViewController : UIViewController, UIAlertViewDelegate {
         self.title = "Meeting Cost"
         self.edgesForExtendedLayout = UIRectEdge.Left
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateMeetingCost), userInfo: nil, repeats: true)
-        
-        let meeting = AppDelegate.restoreDataModel()
-        if(meeting != nil) {
-            self.meeting = meeting
-        }
     }
     
     func updateMeetingCost() {
-        var cost : Double = (meeting?.getCurrentCostOfMeeting)!
-        cost = (round(cost*100))/100
-        costLabel.text = String(cost) + (meeting?.currency)!
+        var cost : Double? = meeting?.getCurrentCostOfMeeting
+        
+        if(cost != nil) {
+            cost = (round(cost!*100))/100
+            costLabel.text = String(cost!) + (meeting?.currency)!
+            NSLog(String(cost))
+        } else {
+            NSLog("nil")
+        }
     }
+    
+    override func encodeRestorableStateWithCoder(coder: NSCoder) {
+        coder.encodeObject(self.costLabel.text, forKey:"costLabel")
+        AppDelegate.archiveDataModel(meeting!)
+        super.encodeRestorableStateWithCoder(coder)
+    }
+    
+    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+        let cost = coder.decodeObjectForKey("costLabel") as? String
+        
+        if(cost != nil) {
+            self.costLabel.text = cost
+        }
+        
+        let meeting = AppDelegate.restoreDataModel()
+        if(meeting != nil && meeting?.getCurrentCostOfMeeting != nil) {
+            self.meeting = meeting
+            meeting?.startMeeting()
+            NSLog("Meeting found")
+            NSLog(String(meeting?.averageHourSalary))
+            NSLog(String(meeting?.numberOfParticipants))
+            NSLog(String(meeting?.currency))
+        } else{
+            NSLog("No meeting found")
+        }
+        
+        super.decodeRestorableStateWithCoder(coder);
+    }
+
     
     func stopMeeting() {
         // Invalidates timer and updates button text.

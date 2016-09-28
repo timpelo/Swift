@@ -24,20 +24,21 @@ class MeetingCostModel : NSObject, NSCoding{
     }
     
     required init(coder decoder: NSCoder) {
-        self.averageHourSalary = Double(decoder.decodeDoubleForKey("salary"))
+        self.averageHourSalary = decoder.decodeDoubleForKey("salary")
         self.numberOfParticipants = Int(decoder.decodeIntForKey("participants"))
-        self.latitude = Double(decoder.decodeDoubleForKey("latitude"))
-        self.longitude = Double(decoder.decodeDoubleForKey("longitude"))
+        self.latitude = decoder.decodeDoubleForKey("latitude")
+        self.longitude = decoder.decodeDoubleForKey("longitude")
         self.startMeetingDate = (decoder.decodeObjectForKey("startDate")) as? NSDate
         self.currency = decoder.decodeObjectForKey("currency") as? String  
     }
     
     func encodeWithCoder(encoder: NSCoder) {
-        encoder.encodeDouble(averageHourSalary, forKey: "salay")
+        encoder.encodeDouble(averageHourSalary, forKey: "salary")
         encoder.encodeInt(Int32(numberOfParticipants), forKey: "participants")
         encoder.encodeDouble(latitude!, forKey: "latitude")
         encoder.encodeDouble(longitude!, forKey: "longitude")
         encoder.encodeObject(currency, forKey: "currency")
+        encoder.encodeObject(startMeetingDate, forKey: "startDate")
     }
 
     
