@@ -47,11 +47,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        // Creates new timer to track meeting.
+        let meetingPrefs : MeetingCostModel? = AppDelegate.restoreDataModel()
+        if(meetingPrefs != nil) {
+            self.meeting = meetingPrefs
+        }
+        
     }
 
     func applicationWillTerminate(application: UIApplication) {
-
+        
+        // Store if meeting was on
+        if let meetingPrefs : MeetingCostModel? = meeting! as MeetingCostModel {
+            AppDelegate.archiveDataModel(meetingPrefs!)
+        }
+        
+    }
+    
+    class func archiveDataModel(meetingModel: MeetingCostModel) {
+        let defaultPropertyFile = NSUserDefaults.standardUserDefaults()
+        let data = NSKeyedArchiver.archivedDataWithRootObject(meetingModel)
+        
+        defaultPropertyFile.setObject(data, forKey: "meeting")
+        defaultPropertyFile.synchronize()
+    }
+    
+    class func restoreDataModel() -> MeetingCostModel? {
+        let defaultPropertyFile = NSUserDefaults.standardUserDefaults()
+        let meetingData = defaultPropertyFile.objectForKey("meeting") as! NSData?
+        
+        if(meetingData != nil) {
+            let meeting = NSKeyedUnarchiver.unarchiveObjectWithData(meetingData!) as! MeetingCostModel?
+            return meeting
+        } else {
+            return nil
+        }
     }
     
     

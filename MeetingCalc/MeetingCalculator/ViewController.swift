@@ -83,13 +83,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIAlertViewDe
                 meetingSuccess.averageHourSalary = averageSalary!
                 meetingSuccess.numberOfParticipants = participantNumber!
                 meetingSuccess.startMeeting()
+                
+                AppDelegate.archiveDataModel(meetingSuccess)
             }
-            
-            NSLog("Name: " + meetingNameField.text!)
-            NSLog("Members: " + meetingMembersField.text!)
-            NSLog("Salary: " + averageSalaryField.text!)
         }
-        
     }
     
     // MARK: CLLocationManagerDelegate delegate methods

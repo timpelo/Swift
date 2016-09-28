@@ -18,6 +18,10 @@ class MeetingCostViewController : UIViewController, UIAlertViewDelegate {
         self.edgesForExtendedLayout = UIRectEdge.Left
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateMeetingCost), userInfo: nil, repeats: true)
         
+        let meeting = AppDelegate.restoreDataModel()
+        if(meeting != nil) {
+            self.meeting = meeting
+        }
     }
     
     func updateMeetingCost() {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MeetingCostModel {
+class MeetingCostModel : NSObject, NSCoding{
     var averageHourSalary : Double
     var isMeetingOn : Bool = false
     var numberOfParticipants : Int
@@ -22,6 +22,24 @@ class MeetingCostModel {
         self.averageHourSalary = averageHourSalary
         self.currency = currency
     }
+    
+    required init(coder decoder: NSCoder) {
+        self.averageHourSalary = Double(decoder.decodeDoubleForKey("salary"))
+        self.numberOfParticipants = Int(decoder.decodeIntForKey("participants"))
+        self.latitude = Double(decoder.decodeDoubleForKey("latitude"))
+        self.longitude = Double(decoder.decodeDoubleForKey("longitude"))
+        self.startMeetingDate = (decoder.decodeObjectForKey("startDate")) as? NSDate
+        self.currency = decoder.decodeObjectForKey("currency") as? String  
+    }
+    
+    func encodeWithCoder(encoder: NSCoder) {
+        encoder.encodeDouble(averageHourSalary, forKey: "salay")
+        encoder.encodeInt(Int32(numberOfParticipants), forKey: "participants")
+        encoder.encodeDouble(latitude!, forKey: "latitude")
+        encoder.encodeDouble(longitude!, forKey: "longitude")
+        encoder.encodeObject(currency, forKey: "currency")
+    }
+
     
     // initializes startMeetingDate if meeting was off
     func startMeeting() {
