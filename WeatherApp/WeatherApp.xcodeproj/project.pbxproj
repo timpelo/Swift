@@ -19,6 +19,7 @@
 		8BC4B2E91DA4DCAE00ADDB63 /* forecast_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BC4B2E51DA4DCAE00ADDB63 /* forecast_icon@2x.png */; };
 		8BC4B2EA1DA4DCAE00ADDB63 /* today_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BC4B2E61DA4DCAE00ADDB63 /* today_icon.png */; };
 		8BC4B2EB1DA4DCAE00ADDB63 /* today_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BC4B2E71DA4DCAE00ADDB63 /* today_icon@2x.png */; };
+		8BC4B2ED1DA4F70600ADDB63 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC4B2EC1DA4F70600ADDB63 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8BC4B2E51DA4DCAE00ADDB63 /* forecast_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forecast_icon@2x.png"; sourceTree = "<group>"; };
 		8BC4B2E61DA4DCAE00ADDB63 /* today_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = today_icon.png; sourceTree = "<group>"; };
 		8BC4B2E71DA4DCAE00ADDB63 /* today_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today_icon@2x.png"; sourceTree = "<group>"; };
+		8BC4B2EC1DA4F70600ADDB63 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				8BC4B2BC1DA4D89800ADDB63 /* LaunchScreen.storyboard */,
 				8BC4B2BF1DA4D89800ADDB63 /* Info.plist */,
 				8BC4B2E11DA4D99C00ADDB63 /* ForecastViewController.swift */,
+				8BC4B2EC1DA4F70600ADDB63 /* WeatherModel.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				8BC4B2B61DA4D89800ADDB63 /* ViewController.swift in Sources */,
 				8BC4B2B41DA4D89800ADDB63 /* AppDelegate.swift in Sources */,
+				8BC4B2ED1DA4F70600ADDB63 /* WeatherModel.swift in Sources */,
 				8BC4B2E21DA4D99C00ADDB63 /* ForecastViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
