@@ -14,12 +14,15 @@ class ViewController: UIViewController{
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var locationInfoLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherIcon.alpha = 0
         cityLabel.alpha = 0
         temperatureLabel.alpha = 0
+        activityIndicator.startAnimating()
         
     }
 
@@ -35,13 +38,21 @@ class ViewController: UIViewController{
     }
     
     func updateWeatherToView() {
+        
+        // Update info of weather elements
         let today = weather?.items[0]
         cityLabel.text = weather?.city
-        temperatureLabel.text = String(today!.celcius)
+        temperatureLabel.text = String(today!.celcius) + " °C"
         let imageURL = "http://openweathermap.org/img/w/\(today!.icon).png"
         let imageData = NSData(contentsOfURL: NSURL(string: imageURL)!);
         weatherIcon.image = UIImage(data: imageData!)
         
+        // Hide indicator elements
+        activityIndicator.stopAnimating()
+        activityIndicator.hidden = true
+        locationInfoLabel.hidden = true
+        
+        // Fade in weather elements.
         UIView.animateWithDuration(1.5, animations: {
             self.weatherIcon.alpha = 1.0
             self.cityLabel.alpha = 1.0

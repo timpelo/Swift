@@ -38,35 +38,70 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLW-kM-ll3">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0c" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nud-e0-UPL">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ezs-9a-7j7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="54"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ezs-9a-7j7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ezs-9a-7j7"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3sq-86-ABG">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fetching location..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-Vj-4rX">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="48" y="28" width="142" height="21"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qP1-ga-11c" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0vK-i6-DhL"/>
                             <constraint firstItem="qP1-ga-11c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1f7-we-nG5"/>
+                            <constraint firstItem="3sq-86-ABG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="30i-yJ-iSr"/>
+                            <constraint firstItem="Jad-Vj-4rX" firstAttribute="leading" secondItem="3sq-86-ABG" secondAttribute="trailing" constant="8" symbolic="YES" id="8lm-4d-Rpo"/>
                             <constraint firstAttribute="trailing" secondItem="eLW-kM-ll3" secondAttribute="trailing" constant="20" symbolic="YES" id="99h-u0-FsY"/>
                             <constraint firstItem="Nud-e0-UPL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="BbX-nN-WZs"/>
                             <constraint firstAttribute="trailing" secondItem="Nud-e0-UPL" secondAttribute="trailing" constant="20" symbolic="YES" id="EVr-mB-jOS"/>
                             <constraint firstItem="eLW-kM-ll3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="I3s-Ua-pD6"/>
+                            <constraint firstItem="3sq-86-ABG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="IKJ-ZQ-5bY"/>
                             <constraint firstItem="Nud-e0-UPL" firstAttribute="top" secondItem="qP1-ga-11c" secondAttribute="bottom" constant="8" symbolic="YES" id="bB4-az-POa"/>
                             <constraint firstItem="qP1-ga-11c" firstAttribute="top" secondItem="eLW-kM-ll3" secondAttribute="bottom" constant="8" symbolic="YES" id="idI-34-WDn"/>
+                            <constraint firstItem="Jad-Vj-4rX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="o6V-fT-VvF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="qP1-ga-11c"/>
                                 <exclude reference="eLW-kM-ll3"/>
                                 <exclude reference="Nud-e0-UPL"/>
+                                <exclude reference="3sq-86-ABG"/>
+                                <exclude reference="Jad-Vj-4rX"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="30i-yJ-iSr"/>
+                                <exclude reference="IKJ-ZQ-5bY"/>
+                                <exclude reference="8lm-4d-Rpo"/>
+                                <exclude reference="o6V-fT-VvF"/>
                                 <exclude reference="99h-u0-FsY"/>
                                 <exclude reference="I3s-Ua-pD6"/>
                                 <exclude reference="0vK-i6-DhL"/>
@@ -82,8 +117,14 @@
                                 <include reference="qP1-ga-11c"/>
                                 <include reference="eLW-kM-ll3"/>
                                 <include reference="Nud-e0-UPL"/>
+                                <include reference="3sq-86-ABG"/>
+                                <include reference="Jad-Vj-4rX"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="30i-yJ-iSr"/>
+                                <include reference="IKJ-ZQ-5bY"/>
+                                <include reference="8lm-4d-Rpo"/>
+                                <include reference="o6V-fT-VvF"/>
                                 <include reference="99h-u0-FsY"/>
                                 <include reference="I3s-Ua-pD6"/>
                                 <include reference="0vK-i6-DhL"/>
@@ -97,7 +138,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="today_icon.png" id="SkL-u9-4xX"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="3sq-86-ABG" id="h4K-zD-UCj"/>
                         <outlet property="cityLabel" destination="eLW-kM-ll3" id="ZNK-sM-SEW"/>
+                        <outlet property="locationInfoLabel" destination="Jad-Vj-4rX" id="8zT-FF-ilP"/>
                         <outlet property="temperatureLabel" destination="Nud-e0-UPL" id="6GB-fk-cZv"/>
                         <outlet property="weatherIcon" destination="qP1-ga-11c" id="Ab6-qQ-yK5"/>
                     </connections>
