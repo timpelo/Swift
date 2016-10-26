@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B17B73F1DC089C500E93305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17B73E1DC089C500E93305 /* AppDelegate.swift */; };
+		8B17B7411DC089C500E93305 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17B7401DC089C500E93305 /* ViewController.swift */; };
+		8B17B7441DC089C500E93305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B17B7421DC089C500E93305 /* Main.storyboard */; };
+		8B17B7461DC089C500E93305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B17B7451DC089C500E93305 /* Assets.xcassets */; };
+		8B17B7491DC089C500E93305 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B17B7471DC089C500E93305 /* LaunchScreen.storyboard */; };
+		8B17B7541DC089C500E93305 /* JussiGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17B7531DC089C500E93305 /* JussiGameTests.swift */; };
+		8B17B75F1DC089C500E93305 /* JussiGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17B75E1DC089C500E93305 /* JussiGameUITests.swift */; };
+		8B17B76E1DC0917300E93305 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17B76D1DC0917300E93305 /* StartScene.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B17B7501DC089C500E93305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B17B7331DC089C400E93305 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B17B73A1DC089C400E93305;
+			remoteInfo = JussiGame;
+		};
+		8B17B75B1DC089C500E93305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B17B7331DC089C400E93305 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B17B73A1DC089C400E93305;
+			remoteInfo = JussiGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8B17B73B1DC089C500E93305 /* JussiGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JussiGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B17B73E1DC089C500E93305 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B17B7401DC089C500E93305 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B17B7431DC089C500E93305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B17B7451DC089C500E93305 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B17B7481DC089C500E93305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B17B74A1DC089C500E93305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B17B74F1DC089C500E93305 /* JussiGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JussiGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B17B7531DC089C500E93305 /* JussiGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JussiGameTests.swift; sourceTree = "<group>"; };
+		8B17B7551DC089C500E93305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B17B75A1DC089C500E93305 /* JussiGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JussiGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B17B75E1DC089C500E93305 /* JussiGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JussiGameUITests.swift; sourceTree = "<group>"; };
+		8B17B7601DC089C500E93305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B17B76D1DC0917300E93305 /* StartScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B17B7381DC089C400E93305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B17B74C1DC089C500E93305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B17B7571DC089C500E93305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B17B7321DC089C400E93305 = {
+			isa = PBXGroup;
+			children = (
+				8B17B73D1DC089C500E93305 /* JussiGame */,
+				8B17B7521DC089C500E93305 /* JussiGameTests */,
+				8B17B75D1DC089C500E93305 /* JussiGameUITests */,
+				8B17B73C1DC089C500E93305 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B17B73C1DC089C500E93305 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B17B73B1DC089C500E93305 /* JussiGame.app */,
+				8B17B74F1DC089C500E93305 /* JussiGameTests.xctest */,
+				8B17B75A1DC089C500E93305 /* JussiGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B17B73D1DC089C500E93305 /* JussiGame */ = {
+			isa = PBXGroup;
+			children = (
+				8B17B76C1DC0916600E93305 /* Scene */,
+				8B17B73E1DC089C500E93305 /* AppDelegate.swift */,
+				8B17B7401DC089C500E93305 /* ViewController.swift */,
+				8B17B7421DC089C500E93305 /* Main.storyboard */,
+				8B17B7451DC089C500E93305 /* Assets.xcassets */,
+				8B17B7471DC089C500E93305 /* LaunchScreen.storyboard */,
+				8B17B74A1DC089C500E93305 /* Info.plist */,
+			);
+			path = JussiGame;
+			sourceTree = "<group>";
+		};
+		8B17B7521DC089C500E93305 /* JussiGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B17B7531DC089C500E93305 /* JussiGameTests.swift */,
+				8B17B7551DC089C500E93305 /* Info.plist */,
+			);
+			path = JussiGameTests;
+			sourceTree = "<group>";
+		};
+		8B17B75D1DC089C500E93305 /* JussiGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8B17B75E1DC089C500E93305 /* JussiGameUITests.swift */,
+				8B17B7601DC089C500E93305 /* Info.plist */,
+			);
+			path = JussiGameUITests;
+			sourceTree = "<group>";
+		};
+		8B17B76C1DC0916600E93305 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8B17B76D1DC0917300E93305 /* StartScene.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B17B73A1DC089C400E93305 /* JussiGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B17B7631DC089C500E93305 /* Build configuration list for PBXNativeTarget "JussiGame" */;
+			buildPhases = (
+				8B17B7371DC089C400E93305 /* Sources */,
+				8B17B7381DC089C400E93305 /* Frameworks */,
+				8B17B7391DC089C400E93305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JussiGame;
+			productName = JussiGame;
+			productReference = 8B17B73B1DC089C500E93305 /* JussiGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B17B74E1DC089C500E93305 /* JussiGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B17B7661DC089C500E93305 /* Build configuration list for PBXNativeTarget "JussiGameTests" */;
+			buildPhases = (
+				8B17B74B1DC089C500E93305 /* Sources */,
+				8B17B74C1DC089C500E93305 /* Frameworks */,
+				8B17B74D1DC089C500E93305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B17B7511DC089C500E93305 /* PBXTargetDependency */,
+			);
+			name = JussiGameTests;
+			productName = JussiGameTests;
+			productReference = 8B17B74F1DC089C500E93305 /* JussiGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8B17B7591DC089C500E93305 /* JussiGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B17B7691DC089C500E93305 /* Build configuration list for PBXNativeTarget "JussiGameUITests" */;
+			buildPhases = (
+				8B17B7561DC089C500E93305 /* Sources */,
+				8B17B7571DC089C500E93305 /* Frameworks */,
+				8B17B7581DC089C500E93305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B17B75C1DC089C500E93305 /* PBXTargetDependency */,
+			);
+			name = JussiGameUITests;
+			productName = JussiGameUITests;
+			productReference = 8B17B75A1DC089C500E93305 /* JussiGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B17B7331DC089C400E93305 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = developer;
+				TargetAttributes = {
+					8B17B73A1DC089C400E93305 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					8B17B74E1DC089C500E93305 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8B17B73A1DC089C400E93305;
+					};
+					8B17B7591DC089C500E93305 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8B17B73A1DC089C400E93305;
+					};
+				};
+			};
+			buildConfigurationList = 8B17B7361DC089C400E93305 /* Build configuration list for PBXProject "JussiGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B17B7321DC089C400E93305;
+			productRefGroup = 8B17B73C1DC089C500E93305 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B17B73A1DC089C400E93305 /* JussiGame */,
+				8B17B74E1DC089C500E93305 /* JussiGameTests */,
+				8B17B7591DC089C500E93305 /* JussiGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B17B7391DC089C400E93305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B17B7491DC089C500E93305 /* LaunchScreen.storyboard in Resources */,
+				8B17B7461DC089C500E93305 /* Assets.xcassets in Resources */,
+				8B17B7441DC089C500E93305 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B17B74D1DC089C500E93305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B17B7581DC089C500E93305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B17B7371DC089C400E93305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B17B7411DC089C500E93305 /* ViewController.swift in Sources */,
+				8B17B76E1DC0917300E93305 /* StartScene.swift in Sources */,
+				8B17B73F1DC089C500E93305 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B17B74B1DC089C500E93305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B17B7541DC089C500E93305 /* JussiGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B17B7561DC089C500E93305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B17B75F1DC089C500E93305 /* JussiGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B17B7511DC089C500E93305 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B17B73A1DC089C400E93305 /* JussiGame */;
+			targetProxy = 8B17B7501DC089C500E93305 /* PBXContainerItemProxy */;
+		};
+		8B17B75C1DC089C500E93305 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B17B73A1DC089C400E93305 /* JussiGame */;
+			targetProxy = 8B17B75B1DC089C500E93305 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8B17B7421DC089C500E93305 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B17B7431DC089C500E93305 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B17B7471DC089C500E93305 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B17B7481DC089C500E93305 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B17B7611DC089C500E93305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B17B7621DC089C500E93305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B17B7641DC089C500E93305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JussiGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamk.tiko.JussiGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8B17B7651DC089C500E93305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JussiGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamk.tiko.JussiGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8B17B7671DC089C500E93305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JussiGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamk.tiko.JussiGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JussiGame.app/JussiGame";
+			};
+			name = Debug;
+		};
+		8B17B7681DC089C500E93305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JussiGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamk.tiko.JussiGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JussiGame.app/JussiGame";
+			};
+			name = Release;
+		};
+		8B17B76A1DC089C500E93305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JussiGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamk.tiko.JussiGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JussiGame;
+			};
+			name = Debug;
+		};
+		8B17B76B1DC089C500E93305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JussiGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamk.tiko.JussiGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JussiGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B17B7361DC089C400E93305 /* Build configuration list for PBXProject "JussiGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B17B7611DC089C500E93305 /* Debug */,
+				8B17B7621DC089C500E93305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B17B7631DC089C500E93305 /* Build configuration list for PBXNativeTarget "JussiGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B17B7641DC089C500E93305 /* Debug */,
+				8B17B7651DC089C500E93305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8B17B7661DC089C500E93305 /* Build configuration list for PBXNativeTarget "JussiGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B17B7671DC089C500E93305 /* Debug */,
+				8B17B7681DC089C500E93305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8B17B7691DC089C500E93305 /* Build configuration list for PBXNativeTarget "JussiGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B17B76A1DC089C500E93305 /* Debug */,
+				8B17B76B1DC089C500E93305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B17B7331DC089C400E93305 /* Project object */;
+}
