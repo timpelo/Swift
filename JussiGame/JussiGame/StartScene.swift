@@ -27,4 +27,25 @@ class StartScene : SKScene {
         
         return helloNode;
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let helloNode = self.childNode(withName: self.TITLE)
+        
+        if let hello = helloNode {
+            hello.name = ""
+            
+            let zoom = SKAction.scale(to: 20.0, duration: 0.5)
+            let fadeAway = SKAction.fadeOut(withDuration: 0.5)
+            let remove = SKAction.removeFromParent()
+            
+            let parallel = SKAction.group([zoom, fadeAway])
+            let sequence = SKAction.sequence([parallel, remove])
+            
+            hello.run(sequence, completion: {
+                let gameScene = GameScene(size: self.size)
+                let transition = SKTransition.doorsOpenVertical(withDuration: 0.5)
+                self.view?.presentScene(gameScene, transition: transition)
+            })
+        }
+    }
 }

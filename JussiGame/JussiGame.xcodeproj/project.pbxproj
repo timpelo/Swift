@@ -15,6 +15,10 @@
 		8B17B7541DC089C500E93305 /* JussiGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17B7531DC089C500E93305 /* JussiGameTests.swift */; };
 		8B17B75F1DC089C500E93305 /* JussiGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17B75E1DC089C500E93305 /* JussiGameUITests.swift */; };
 		8B17B76E1DC0917300E93305 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17B76D1DC0917300E93305 /* StartScene.swift */; };
+		8B17B7701DC0A17E00E93305 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17B76F1DC0A17E00E93305 /* GameScene.swift */; };
+		8B17B7721DC0A42000E93305 /* alien.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B17B7711DC0A42000E93305 /* alien.png */; };
+		8B17B7751DC0A51300E93305 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B17B7741DC0A51300E93305 /* button.png */; };
+		8B17B7771DC0A80600E93305 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B17B7761DC0A80600E93305 /* ball.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		8B17B75E1DC089C500E93305 /* JussiGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JussiGameUITests.swift; sourceTree = "<group>"; };
 		8B17B7601DC089C500E93305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B17B76D1DC0917300E93305 /* StartScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
+		8B17B76F1DC0A17E00E93305 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		8B17B7711DC0A42000E93305 /* alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alien.png; sourceTree = "<group>"; };
+		8B17B7741DC0A51300E93305 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		8B17B7761DC0A80600E93305 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 			children = (
 				8B17B76C1DC0916600E93305 /* Scene */,
 				8B17B73E1DC089C500E93305 /* AppDelegate.swift */,
+				8B17B7731DC0A42400E93305 /* images */,
 				8B17B7401DC089C500E93305 /* ViewController.swift */,
 				8B17B7421DC089C500E93305 /* Main.storyboard */,
 				8B17B7451DC089C500E93305 /* Assets.xcassets */,
@@ -132,8 +141,19 @@
 			isa = PBXGroup;
 			children = (
 				8B17B76D1DC0917300E93305 /* StartScene.swift */,
+				8B17B76F1DC0A17E00E93305 /* GameScene.swift */,
 			);
 			name = Scene;
+			sourceTree = "<group>";
+		};
+		8B17B7731DC0A42400E93305 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8B17B7741DC0A51300E93305 /* button.png */,
+				8B17B7761DC0A80600E93305 /* ball.png */,
+				8B17B7711DC0A42000E93305 /* alien.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B17B7491DC089C500E93305 /* LaunchScreen.storyboard in Resources */,
+				8B17B7751DC0A51300E93305 /* button.png in Resources */,
+				8B17B7771DC0A80600E93305 /* ball.png in Resources */,
+				8B17B7721DC0A42000E93305 /* alien.png in Resources */,
 				8B17B7461DC089C500E93305 /* Assets.xcassets in Resources */,
 				8B17B7441DC089C500E93305 /* Main.storyboard in Resources */,
 			);
@@ -272,6 +295,7 @@
 			files = (
 				8B17B7411DC089C500E93305 /* ViewController.swift in Sources */,
 				8B17B76E1DC0917300E93305 /* StartScene.swift in Sources */,
+				8B17B7701DC0A17E00E93305 /* GameScene.swift in Sources */,
 				8B17B73F1DC089C500E93305 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
